@@ -9,6 +9,8 @@ void main(List<String> arguments) async {
   }
   final src = arguments[0];
   final dst = arguments[1];
+  // final src = 'data/jhtml.html';
+  // final dst = 'data/out.json';
   final data = await File(src).readAsString();
   final result = htmlAsJson(data);
   await (File(dst)..createSync()).writeAsString(result);
